@@ -372,7 +372,7 @@ end
 
 %% T0009: livt dataset
 %cell PTC143-0205, gene ADA should be 556
-ds = SCDep.scd_livt;
+ds = DsLivt.get();
 geneSel = strcmp(ds.genes, 'ADA');
 cellSel = strcmp(ds.cellIds,'PTC143-0205');
 if ds.data(geneSel,cellSel) ~= 556
