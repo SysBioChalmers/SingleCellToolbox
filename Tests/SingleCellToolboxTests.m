@@ -415,7 +415,7 @@ end
 
 %% T0012: B10k
 %cell AAACATACAATGCC-1, gene MT-CO1 should be 17
-ds = SCDep.scd_pbmcb10000;
+ds = DsB10k.get();
 geneSel = strcmp(ds.genes, 'MT-CO1');
 cellSel = strcmp(ds.cellIds,'AAACATACAATGCC-1');
 if ds.data(geneSel,cellSel) ~= 17
@@ -428,7 +428,7 @@ end
 
 %% T0013: CD4MEM
 %cell AAACATACACCTAG-1, gene RPL13A should be 29
-ds = SCDep.scd_pbmctcd4mem10000;
+ds = DsTCD4Mem.get();
 geneSel = strcmp(ds.genes, 'RPL13A');
 cellSel = strcmp(ds.cellIds,'AAACATACACCTAG-1');
 if ds.data(geneSel,cellSel) ~= 29

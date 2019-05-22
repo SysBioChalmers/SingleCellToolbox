@@ -13,7 +13,7 @@ classdef DsPbmc68k
             %   Gets the dataset. This is quick except the first time it is
             %   called, since the data is cached at two levels; a
             %   persistant variable and in a .mat file.
-            % Usage: ds = DsOvAsc.get();
+            % Usage: ds = DsPbmc68k.get();
             DsHelper.init();
             persistent v;
             if isempty(v)

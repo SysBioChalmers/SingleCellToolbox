@@ -80,47 +80,6 @@ classdef SCDep
             ret = v;
         end
         
-        %pbmcb10000
-        function ret = scd_pbmcb10000()
-            SCDep.init();
-            persistent v;
-            if isempty(v)
-                disp('reading pbmcb10000 data ...');
-                filename = '../../TempData/pbmcb10000.mat';
-                prevDir = SCDep.setPathToSource();
-                if(~exist(filename,'file'))
-                    disp('No .mat file found, importing data');
-                    v = ReadPBMCB10000('../../ImportableData/PBMC10000BCells/filtered_matrices_mex/hg19');
-                    save(filename, 'v');
-                else
-                    a = load(filename);
-                    v = a.v;
-                end
-                SCDep.restoreDir(prevDir);
-            end
-            ret = v;
-        end
-        
-        %pbmctcd4mem10000
-        function ret = scd_pbmctcd4mem10000()
-            SCDep.init();
-            persistent v;
-            if isempty(v)
-                disp('reading pbmccd4mem10000 data ...');
-                filename = '../../TempData/pbmctcd4mem10000.mat';
-                prevDir = SCDep.setPathToSource();
-                if(~exist(filename,'file'))
-                    disp('No .mat file found, importing data');
-                    v = ReadPBMCTCD4Mem10000('../../ImportableData/PBMCCD4TCellsMemory/filtered_matrices_mex/hg19');
-                    save(filename, 'v');
-                else
-                    a = load(filename);
-                    v = a.v;
-                end
-                SCDep.restoreDir(prevDir);
-            end
-            ret = v;
-        end
         
     end
     
