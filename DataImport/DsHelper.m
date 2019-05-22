@@ -1,9 +1,10 @@
-classdef SCDep
-    % SCDep
-    %   Wrapper class for dataset access. The datasets are cached in
-    %   persistant variables and also on disc, and only loaded when needed.
+classdef DsHelper
+    % DsHelper
+    %   Helper class for all dataset import classes. In general these classes 
+    %   support caching of data, both at
+    %   persistant variables level but also on disc, and only loaded when needed.
     %   To clear the persistant variables to get the memory back
-    %   call "clear SCDep" from outside!
+    %   call "clear <class name>" from outside!
     %   It doesn't work to put that in a function, since the class is then
     %   used in the call and thereby locked
     %
@@ -18,7 +19,7 @@ classdef SCDep
             %   Initialization code run once. Should be called in every
             %   function in this class.
             %
-            % Usage: SCDep.init();
+            % Usage: DsBase.init();
             %
             
             %set paths etc only once
@@ -79,6 +80,8 @@ classdef SCDep
             end
             ret = v;
         end
+        
+        %50 000 breast cancer immune cells
         
         %liver cancer T cells
         function ret = scd_livt()

@@ -282,7 +282,7 @@ expLogRes = [0 1 2 3; 4 5 6 7];
 logRes = LogTrans(logTestData, true);
 restoredLogData = LogTrans(logRes, false); 
 if ~(isequal(logTestData, restoredLogData) && isequal(logRes, expLogRes))
-    disp('T0025: LogTrans failed');
+    error('T0025: LogTrans failed');
 else
     disp('T0025: LogTrans: ok');
 end
@@ -344,7 +344,7 @@ end
 
 %% T0007: BC2 dataset
 %cell 332, gene A2M should be 3
-bc = SCDep.scd_bc2;
+bc = DsBC2.get();
 geneSel = strcmp(bc.genes, 'A2M');
 cellSel = strcmp(bc.cellIds,'332');
 if bc.data(geneSel,cellSel) ~= 3
