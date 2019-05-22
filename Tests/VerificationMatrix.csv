@@ -1,0 +1,39 @@
+File;Verification
+AdjustPval.m;T0005
+CalcDSAVE.m;"No test case; tested with figure 3A and 3E in Supplementary information."
+Celltype.m;Not tested, just a declaration
+CelltypeId2CelltypeName.m;Not tested, just a number to text conversion function
+CreateVennDiagramSets.m;T0017
+DSAVEAlignDataset.m;T0018, Figure 2 B-C in the paper.
+DSAVEGenerateTemplateInfo.m;T0019, also implicitly tested in  Figure 2 B-C in the paper.
+DSAVEGetGeneVariation.m;T0026
+DSAVEGetSingleCellDivergence.m;T0021. LogMultinomialPDF was tested with T0016. The graphs 5 C-D shows that the divergence reflects known QC metrics.
+DSAVEGetStandardTemplate.m;T0019
+DSAVEGetTotalVariationVsPoolSize.m;"T0023 tests this partly; the values also look as expected in figure 1 A-C in the main paper."
+DSAVEGetTotalVariationFromBulk.m;T0022
+GenerateSamplingSSDataset.m;T0020 partly tests the function. Also implicitly verified since Figure 3A in supplementary information shows that different datasets with the same noise get similar scores, and that this function is used for generating them.
+GenerateTotalVariationGraphs.m;Not tested, this is just code for generating graphs
+ImportTabSepSamples.m;Not tested, a simple load function
+LogMultinomialPDF.m;T0016
+ProgressBar.m;Not tested, just a graphical effect when running scripts
+Read10xMatrix.m;Verified as part of Read functions for datasets
+ReadBC2.m;T0007
+ReadGSE112845.m;T0008, only tested CD8+ part, which is the only one used
+ReadHCACordBlood.m;Difficult to test since the data files are difficult to read manually. Verified with a tsne plot and  coloring of cell types, which looks ok
+ReadLiverTCells.m;T0009
+ReadLung50000.m;T0006
+ReadOvarianAscites.m;T0010
+ReadPBMC68000.m;T0011
+ReadPBMCB10000.m;T0012
+ReadPBMCTCD4Mem10000.m;T0013
+RelativeImportanceScript.R;Not tested, this is just code for generating graph data
+Samples.m;T0014
+SCDataset.m;T0001,T0002,T0003
+SCDep.m;Not tested, just a loading wrapper for datasets, pretty obvious if it doesn't work.
+SynchronizeGenes.m;T0004
+TPM.m;T0015
+ProgrBar.m;T0024
+ProgrBarChild.m;T0024
+ProgrBarContext.m;T0024
+DSAVEInstall;Tested manually, works.
+LogTrans;T0025
