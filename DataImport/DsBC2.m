@@ -14,7 +14,7 @@ classdef DsBC2
     
     methods(Static)
         function ret = get()
-            % import
+            % get
             %   Gets the dataset. This is quick except the first time it is
             %   called, since the data is cached at two levels; a
             %   persistant variable and in a .mat file.

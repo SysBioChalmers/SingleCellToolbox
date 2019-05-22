@@ -254,44 +254,6 @@ classdef SCDep
             ret = v;
         end
         
-        %GSE112845 - pbmc datasets
-        function [xPat,yPat,cd8] = scd_GSE112845()
-            SCDep.init();
-            persistent v;
-            persistent w;
-            persistent x;
-            if isempty(v)
-                disp('reading GSE112845 data ...');
-                filename = '../../TempData/gse112845_1.mat';
-                filename2 = '../../TempData/gse112845_2.mat';
-                filename3 = '../../TempData/gse112845_3.mat';
-                prevDir = SCDep.setPathToSource();
-                if(~exist(filename,'file'))
-                    disp('No .mat file found, importing data');
-                    v = ReadGSE112845('../../ImportableData/GSE112845/DTM-X_PBMC_live', '../../ImportableData/GSE112845/DTM-X_PBMC_live_ct.txt');
-                    w = ReadGSE112845('../../ImportableData/GSE112845/DTM-Y_PBMC_methanol_3w', '../../ImportableData/GSE112845/DTM-Y_PBMC_methanol_3w_ct.txt');
-                    x = ReadGSE112845('../../ImportableData/GSE112845/CD8_live', '');
-                    v.name = 'GSE112845 DTM-X_PBMC_live';
-                    w.name = 'GSE112845 DTM-Y_PBMC_methanol_3w';
-                    x.name = 'GSE112845 CD8_live';
-                    save(filename, 'v');
-                    save(filename2, 'w');
-                    save(filename3, 'x');
-                else
-                    a = load(filename);
-                    v = a.v;
-                    b = load(filename2);
-                    w = b.w;
-                    c = load(filename3);
-                    x = c.x;
-                end
-                SCDep.restoreDir(prevDir);
-            end
-            xPat = v;
-            yPat = w;
-            cd8 = x;
-        end
-        
         
     end
     

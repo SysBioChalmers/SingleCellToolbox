@@ -359,7 +359,7 @@ end
 
 %% T0008: GSE112845 dataset, test CD8 only
 %cell AAACCTGAGCCTTGAT-1, gene RPL22 should be 9
-[xPat,yPat,cd8] = SCDep.scd_GSE112845;
+[xPat,yPat,cd8] = DsGSE112845.get();
 geneSel = strcmp(cd8.genes, 'RPL22');
 cellSel = strcmp(cd8.cellIds,'AAACCTGAGCCTTGAT-1');
 if cd8.data(geneSel,cellSel) ~= 9
