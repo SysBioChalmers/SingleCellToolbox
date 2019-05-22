@@ -33,9 +33,9 @@ classdef DsTCD4Mem
             end
             ret = v;
         end
-        
-        
-        
+    end
+    
+    methods(Static, Access = private)
         function ds = import(directoryPath)
             % import
             %   Imports the data
