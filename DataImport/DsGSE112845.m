@@ -65,9 +65,9 @@ classdef DsGSE112845
             %   path                Path to the 10x data folder
             %   classificationPath  Path to the cell type info file, can be omitted
             %
-            % Usage: ds = ReadGSE112845('../../ImportableData/GSE112845/DTM-X_PBMC_live', '../../ImportableData/GSE112845/DTM-X_PBMC_live_ct.txt');
+            % Usage: ds = DsGSE112845.import('../../ImportableData/GSE112845/DTM-X_PBMC_live', '../../ImportableData/GSE112845/DTM-X_PBMC_live_ct.txt');
             %
-            % Johan Gustafsson, 2019-05-20
+            % Johan Gustafsson, 2019-05-22
             %
             
             %path = 'C:/Work/MatlabCode/components/SCLib/ImportableData/GSE112845/DTM-X_PBMC_live';

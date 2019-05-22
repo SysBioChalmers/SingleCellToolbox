@@ -444,7 +444,7 @@ end
 % complementary test is the result shown in Figure 2 B-C, which shows that
 % the sampling noise of all aligned datasets is virtually the same
 templInfo = DSAVEGetStandardTemplate();
-ds = SCDep.scd_hca_cb;
+ds = DsHcaCB.get();
 ds = ds.cellSubset(1:2001);
 ds2 = DSAVEAlignDataset(ds, templInfo);
 UMIDistr = sum(ds2.data,1);

@@ -80,27 +80,6 @@ classdef SCDep
             ret = v;
         end
         
-        %liver cancer T cells
-        function ret = scd_livt()
-            SCDep.init();
-            persistent v;
-            if isempty(v)
-                disp('reading liver cancer T cells...');
-                prevDir = SCDep.setPathToSource();
-                filename = '../../TempData/livt.mat';
-                if(~exist(filename,'file'))
-                    disp('No .mat file found, importing data');
-                    v = ReadLiverTCells('../../ImportableData/GSE98638_HCC.TCell.S5063.count.txt', '../../ImportableData/GSE98638_HCC.TCell.OkCellIds.txt');
-                    save(filename, 'v');
-                else
-                    a = load(filename);
-                    v = a.v;
-                end
-                SCDep.restoreDir(prevDir);
-            end
-            ret = v;
-        end
-        
         %ovarian ascites
         function ret = scd_ovasc()
             SCDep.init();
@@ -215,45 +194,6 @@ classdef SCDep
             end
             ret = v;
         end
-        
-        %human cell atlas cord blood
-        function ret = scd_hca_cb()
-            SCDep.init();
-            persistent v;
-            if isempty(v)
-                disp('reading hca cord blood...');
-                filename = '../../TempData/hca_cb.mat';
-                filename2 = '../../TempData/hca_cb_2.mat';
-                filename3 = '../../TempData/hca_cb_3.mat';
-                prevDir = SCDep.setPathToSource();
-                if(~exist(filename,'file'))
-                    disp('No .mat file found, importing data');
-                    v = ReadHCACordBlood('../../ImportableData/ica_cord_blood_h5.h5', '../../ImportableData/cord_blood_cell_type_processed.txt');
-                    %cut up the data in several blocks and save to separate files
-                    %since it seems there is a limitation to object size
-                    data2 = v.data(:,100001:200000);
-                    data3 = v.data(:,200001:end);
-                    v.data = v.data(:,1:100000);
-                    
-                    save(filename, 'v');
-                    save(filename2, 'data2');
-                    save(filename3, 'data3');
-                else
-                    a = load(filename);
-                    v = a.v;
-                    b = load(filename2);
-                    c = load(filename3);
-                    data2 = b.data2;
-                    data3 = c.data3;
-                end
-                %put the data matrix back together
-                v.data = [v.data data2 data3];
-                
-                SCDep.restoreDir(prevDir);
-            end
-            ret = v;
-        end
-        
         
     end
     
