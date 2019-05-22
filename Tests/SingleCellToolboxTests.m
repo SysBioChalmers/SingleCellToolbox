@@ -277,14 +277,14 @@ else
 end
 
 %% T0025 LogTrans
-logTestData = [0 9 99 999; 9999 99999 999999 9999999];
-expLogRes = [0 1 2 3; 4 5 6 7];
+logTestData = [0 1 2 3 4 5 6 7];
+expLogRes = [log(1) log(2) log(3) log(4) log(5) log(6) log(7) log(8)];
 logRes = LogTrans(logTestData, true);
 restoredLogData = LogTrans(logRes, false); 
-if ~(isequal(logTestData, restoredLogData) && isequal(logRes, expLogRes))
-    error('T0025: LogTrans failed');
-else
+if (max(abs(logTestData - restoredLogData)) < 10^-12) && (max(abs(logRes - expLogRes)) < 10^-12)
     disp('T0025: LogTrans: ok');
+else
+    error('T0025: LogTrans failed');
 end
 
 
