@@ -326,7 +326,7 @@ end
 
 
 %% T0006: LC dataset
-[lc,hlc] = SCDep.scd_lc;
+[lc,hlc] = DsLC.get();
 %cell AAATCCCTCTAGAC_1, gene NOC2L should be 2
 geneSel = strcmp(lc.genes, 'NOC2L');
 cellSel = strcmp(lc.cellIds,'AAATCCCTCTAGAC_1');
@@ -387,7 +387,7 @@ end
 
 %% T0010: ovasc dataset
 %cell ovasc_2, gene AAAS should be 11
-ds = SCDep.scd_ovasc;
+ds = DsOvAsc.get();
 geneSel = strcmp(ds.genes, 'AAAS');
 cellSel = strcmp(ds.cellIds,'ovasc_2');
 if ds.data(geneSel,cellSel) ~= 11
