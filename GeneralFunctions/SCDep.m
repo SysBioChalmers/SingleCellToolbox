@@ -80,27 +80,6 @@ classdef SCDep
             ret = v;
         end
         
-        %pbmc68000
-        function ret = scd_pbmc68000()
-            SCDep.init();
-            persistent v;
-            if isempty(v)
-                disp('reading pbmc68000 data ...');
-                filename = '../../TempData/pbmc68000.mat';
-                prevDir = SCDep.setPathToSource();
-                if(~exist(filename,'file'))
-                    disp('No .mat file found, importing data');
-                    v = ReadPBMC68000('../../ImportableData/PBMC68000PatAFresh/filtered_matrices_mex/hg19');
-                    save(filename, 'v');
-                else
-                    a = load(filename);
-                    v = a.v;
-                end
-                SCDep.restoreDir(prevDir);
-            end
-            ret = v;
-        end
-        
         %pbmcb10000
         function ret = scd_pbmcb10000()
             SCDep.init();

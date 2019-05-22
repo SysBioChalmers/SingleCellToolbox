@@ -402,7 +402,7 @@ end
 
 %% T0011: PBMC68k
 %cell AAACATACACCCAA-1, gene RPL3 should be 20
-ds = SCDep.scd_pbmc68000;
+ds = DsPbmc68k.get();
 geneSel = strcmp(ds.genes, 'RPL3');
 cellSel = strcmp(ds.cellIds,'AAACATACACCCAA-1');
 if ds.data(geneSel,cellSel) ~= 20
