@@ -462,10 +462,10 @@ end
 % the sampling noise of all aligned datasets is virtually the same
 templInfo = DSAVEGetStandardTemplate();
 
-genes = SCDep.scd_ovasc.genes;
-genes = intersect(genes,SCDep.scd_bc2.genes);
-genes = intersect(genes,SCDep.scd_pbmcb10000.genes);
-[scd_GSE112845_pat_a,scd_GSE112845_pat_b,scd_GSE112845_cd8] = SCDep.scd_GSE112845;
+genes = DsOvAsc.get().genes;
+genes = intersect(genes,DsBC2.get().genes);
+genes = intersect(genes,DsB10k.get().genes);
+[scd_GSE112845_pat_a,scd_GSE112845_pat_b,scd_GSE112845_cd8] = DsGSE112845.get();
 genes = intersect(genes,scd_GSE112845_cd8.genes);
 
 if mean(templInfo.UMIDistr) ~= 750
@@ -481,7 +481,7 @@ end
 % The code is implicitly verified since Figure 3A in 
 % supplementary information shows that different datasets with the same 
 % noise get similar scores, and that this function is used for generating them.
-ds = SCDep.scd_ovasc;
+ds = DsOvAsc.get();
 ds2 = DSAVEGenerateSNODataset(ds);
 UMIs1 = sum(ds.data,1);
 UMIs2 = sum(ds2.data,1);
