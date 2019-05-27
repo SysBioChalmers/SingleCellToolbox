@@ -3,13 +3,13 @@ classdef DsCML
     %   Reads CML data from file into an SCDataset class
     %   The cells are CD38- CD34+ stem cells, checked for BCR-ABL
     %   BCR-ABL-positive cells are of the cell type malignant in the
-    %   dataset, even though also stem cells. CML progression is in the 
-    %   extraCellInfo field.
+    %   dataset, even though also stem cells.
     %   Pooled normal stem cells, will have 'healthy bulk' in the 
     %   extraCellInfo field
     %   Cell line cells are marked with 'cell line' in the extraCellInfo
     %   field.
-    %   There is additional info about
+    %   There is additional info about CML progression etc. that we
+    %   currently do not import.
     %   Publication: 'Single-cell transcriptomics uncovers distinct 
     %   molecular signatures of stem cells in chronic myeloid leukemia',
     %   GSE76312.
@@ -55,7 +55,7 @@ classdef DsCML
             %
             % Usage: ds =
             % DsCML.import('../../ImportableData/GSE76312_CML/Giustacchini_Thongjuea_et.al_Nat.Med.RPKM.txt',
-            %                          '../../ImportableData/GSE76312_CML/GSE76312_Giustacchini-Thongjuea_et.al_Cell_Annotation.txt');
+            %              '../../ImportableData/GSE76312_CML/GSE76312_Giustacchini-Thongjuea_et.al_Cell_Annotation.txt');
             %
             
             ds = SCDataset;
