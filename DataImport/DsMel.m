@@ -43,7 +43,7 @@ classdef DsMel
             % import
             %   Imports the data
             % Input:
-            %   path       Path to the 10x files. No slash at the end.
+            %   path       Path to the data file
             %
             % Usage: ds = DsMel.import('../../ImportableData/mel1/GSE72056_melanoma_single_cell_revised_v2.txt');
             %
