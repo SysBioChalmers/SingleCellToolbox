@@ -3,7 +3,7 @@ classdef ProgrBar < handle
     %   Class used for showing a text output progress bar. The progress bar
     %   supports a hierarchy, which is controlled through a context. The
     %   test case for the progress bar explains this concept well.
-    %   The printouts are heavily inspired by https://se.mathworks.com/matlabcentral/fileexchange/28067-text-progress-bar,
+    %   The printouts are inspired by https://se.mathworks.com/matlabcentral/fileexchange/28067-text-progress-bar,
     %   thanks Paul for the nice code!
     %   Note that this is a handle class, so don't try to copy its objects!
     %
