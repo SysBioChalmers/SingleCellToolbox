@@ -2,11 +2,6 @@ classdef DsGSE112845
     % DsBC2
     %   Reads one of the GSE112845 datasets from file into an SCDataset. Note
     %   that there are several datasets to choose from.
-    % Input:
-    %   path                Path to the 10x data folder
-    %   classificationPath  Path to the cell type info file, can be omitted
-    %
-    % Usage: ds = ReadGSE112845('../../ImportableData/GSE112845/DTM-X_PBMC_live', '../../ImportableData/GSE112845/DTM-X_PBMC_live_ct.txt');
     %
     % Johan Gustafsson, 2019-05-20
     %
