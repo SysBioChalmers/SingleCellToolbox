@@ -250,5 +250,20 @@ classdef SCDataset
                 samples.data(:,i) = mean(subds.data,2);
             end
         end
+		
+        function samples = poolToSingleSample(this)
+            % getAsSingleSample
+            %   Creates a samples object one sample, represented by the sum of all
+            %   counts in the single cells. The pool is not converted to TPM by default.
+            % Input:
+            %
+            % Usage: samples = ds.poolToSingleSample();
+            %            
+
+            samples = Samples();
+            samples.genes = this.genes;
+            samples.sampleIds = {"Pool"};
+            samples.data = mean(this.data,2);
+        end
     end
 end
