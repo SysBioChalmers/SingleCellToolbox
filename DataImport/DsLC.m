@@ -101,26 +101,26 @@ classdef DsLC
             for i = 1:numCells
                 clust = cluster(i);
                 %for some subtypes another cell type should be set
-                if strcmp(clust,'B_cell_4')
-                    temp(1,i) = Celltype.Mast;
-                elseif strcmp(clust,'B_cell_8')
-                    temp(1,i) = Celltype.Dendritic;
-                elseif strcmp(clust,'B_cell_9')
-                    temp(1,i) = Celltype.Erythroblast;
-                elseif strcmp(clust,'Myeloid_5')
-                    temp(1,i) = Celltype.Langerhans;
-                elseif strcmp(clust,'Myeloid_7')
-                    temp(1,i) = Celltype.Granulocyte;
-                elseif strcmp(clust,'Myeloid_9') || strcmp(clust,'Myeloid_12')
-                    temp(1,i) = Celltype.Dendritic;
-                elseif strcmp(clust,'T_cell_6')
-                    temp(1,i) = Celltype.NKCell;
-                elseif strcmp(clust,'T_cell_2') || strcmp(clust,'T_cell_4') || strcmp(clust,'T_cell_5') || strcmp(clust,'T_cell_8')
-                    temp(1,i) = Celltype.TCellCD8Pos;
-                elseif strcmp(clust,'T_cell_1') || strcmp(clust,'T_cell_3') || strcmp(clust,'T_cell_9')
-                    temp(1,i) = Celltype.TCellCD4Pos;
-                elseif strcmp(clust,'T_cell_7')
-                    temp(1,i) = Celltype.TCellReg;
+				if strcmp(clust,'B_cell_3')
+					temp(1,i) = Celltype.Mast;
+				elseif strcmp(clust,'B_cell_7')
+					temp(1,i) = Celltype.Dendritic;
+				elseif strcmp(clust,'B_cell_8')
+					temp(1,i) = Celltype.Erythroblast;
+				elseif strcmp(clust,'Myeloid_4')
+					temp(1,i) = Celltype.Langerhans;
+				elseif strcmp(clust,'Myeloid_6')
+					temp(1,i) = Celltype.Granulocyte;
+				elseif strcmp(clust,'Myeloid_8') || strcmp(clust,'Myeloid_11')
+					temp(1,i) = Celltype.Dendritic;
+				elseif strcmp(clust,'T_cell_5')
+					temp(1,i) = Celltype.NKCell;
+				elseif strcmp(clust,'T_cell_1') || strcmp(clust,'T_cell_3') || strcmp(clust,'T_cell_4') || strcmp(clust,'T_cell_7') 
+					temp(1,i) = Celltype.TCellCD8Pos;
+				elseif strcmp(clust,'T_cell_0') || strcmp(clust,'T_cell_2') || strcmp(clust,'T_cell_8')
+					temp(1,i) = Celltype.TCellCD4Pos;
+				elseif strcmp(clust,'T_cell_6')
+					temp(1,i) = Celltype.TCellReg;
                 else
                     %for the rest, just use the cell type specified
                     ct = cellType(i);
