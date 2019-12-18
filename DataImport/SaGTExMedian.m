@@ -22,7 +22,7 @@ classdef SaGTExMedian
                 filename = '../../TempData/GTExMed.mat';
                 if(~exist(filename,'file'))
                     disp('No .mat file found, importing data');
-                    v = SaGTExMedian.import('../../ImportableData/GTEx_Analysis_2016-01-15_v7_RNASeQCv1.1.8_gene_median_tpm.gct');
+                    v = SaGTExMedian.import('../../ImportableData/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_median_tpm.gct');
                     save(filename, 'v');
                 else
                     a = load(filename);
