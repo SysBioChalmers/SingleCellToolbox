@@ -39,7 +39,8 @@ classdef Celltype
         Megakaryocyte = 27
         HematopeticStemOrProgenitor = 28
         TCellCD4Memory = 29 % CD4+/CD45RO+
-        Erythrocyte = 30
+        Erythrocyte = 30,
+        hESC = 31 %human embryonic stem cell
         %TCellCD4Naive = 23
         %TCellCD8Naive = 24
         %NKTCell = 25

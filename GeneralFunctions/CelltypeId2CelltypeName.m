@@ -93,6 +93,8 @@ end
                 str = 'T cell CD4+ Memory';
             case Celltype.Erythrocyte
                 str = 'Erythrocyte';
+            case Celltype.hESC
+                str = 'Human Embryonic Stem Cell';
             otherwise
                 str = strcat('non-supported: ', num2str(a));
         end
