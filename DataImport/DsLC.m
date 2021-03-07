@@ -89,6 +89,10 @@ classdef DsLC
             cellType = table2cell(t(:,4));
             patient = table2cell(t(:,9));
             patient = cellfun(@(x) {num2str(x)}, patient);
+            parts = table2cell(t(:,8));
+            lengths = cellfun(@length,parts);
+            parts = extractBetween(parts,3,lengths);
+            
             fromTumor = strcmp(table2cell(t(:,6)),'TRUE');
             
             [~,ia,ib] = intersect(s.cellIds, cellIds.');
@@ -159,6 +163,9 @@ classdef DsLC
             %set patient ids as sample ids - we lose some info about localization of
             %sample within the tumor; can be set if desired
             s.sampleIds(1,ia.') = patient(ib,1).';
+            
+            %we add the localization of samples in the extra info instead
+            s.extraCellInfo = parts.';
             
             %split in tumor and healthy
             th(1,ia.') = fromTumor(ib,1).';
